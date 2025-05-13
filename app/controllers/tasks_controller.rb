@@ -4,12 +4,12 @@ class TasksController < ApplicationController
     @tasks = Task.all
   end
 
-  def new
-    @task = Task.new
-  end
-
   def show
     @task = Task.find(params[:id])
+  end
+
+  def new
+    @task = Task.new
   end
 
   def create
@@ -35,7 +35,7 @@ class TasksController < ApplicationController
   end
 
   def destroy
-    @task = Task.find(param[:id])
+    @task = Task.find(params[:id])
     @task.destroy
     redirect_to tasks_path, status: :see_other
   end

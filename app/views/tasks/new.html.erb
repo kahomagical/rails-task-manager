@@ -8,4 +8,8 @@
   <%= f.submit %>
 <% end %>
 
-<div><%= link_to "Back to list", tasks_path %></div>
+<div>
+  <%= link_to tasks_path do %>
+    <i class="fa-solid fa-rotate-left"></i> Back to list
+  <% end %>
+</div>

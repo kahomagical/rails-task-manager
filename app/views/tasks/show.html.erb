@@ -1,14 +1,21 @@
-<div><%= link_to "Edit this task", task_edit_path %></div>
-<!--  want to make above link a button class="btn btn-primary" -->
+<h1>Task details</h1>
+
+<div>
+<%= link_to "Edit this task", task_edit_path(@task), class: "btn btn-primary mt-3" %>
+</div>
 
 <div><ul>
 <li><%= @task.title %></li>
 <li><%= @task.details %></li>
 <li><% if @task.completed = false %>
-    <p>[X] This task is not completed.</p>
+  <i class="fa-regular fa-square-check"></i> Completed
   <% elsif @task.completed = true %>
-    <p>[ ] This task is not completed.</p>
+  <i class="fa-regular fa-square"></i> Completed
 <% end %></li>
 </ul></div>
 
-<div><%= link_to "Back to list", tasks_path %></div>
+<div>
+  <%= link_to tasks_path do %>
+    <i class="fa-solid fa-rotate-left"></i> Back to list
+  <% end %>
+</div>
