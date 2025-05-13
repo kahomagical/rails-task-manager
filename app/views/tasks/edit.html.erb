@@ -5,5 +5,18 @@
   <%= f.text_field :title %>
   <%= f.label :details %>
   <%= f.text_field :details %>
-  <%= f.submit "Edit" %>
+  <%= f.submit "Update" %>
 <% end %>
+
+<div>
+<% if @task.completed = true %>
+  <p>[X] Completed </p>
+<% elsif @task.completed = false %>
+  <p>[ ] Completed </p>
+<% end %>
+</div>
+
+<div>
+<%= link_to "Back to list", tasks_path %>
+  <i class="fa-solid fa-rotate-left"></i>
+</div>
